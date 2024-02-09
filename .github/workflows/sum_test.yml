@@ -37,6 +37,6 @@ jobs:
 
     steps:
       - name: Echo the Pass results and env
-        run: echo "The Test cases have passed and this is the env!!" ${{env.DBURL}}
+        run: echo "The Test cases have passed and this is the env!! ${{env.DBURL}}" 
       - name: Echo the Pass results and secrets
-        run: echo "The Test cases have passed and this is the secrets!!" ${{secrets.SOMEAUTHSECRET}}
+        run: echo "The Test cases have passed and this is the secrets!! ${{secrets.SOMEAUTHSECRET}}" 
