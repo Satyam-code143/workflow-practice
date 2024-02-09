@@ -1,0 +1,20 @@
+{
+  "name": "test_gitworkflow",
+  "version": "1.0.0",
+  "description": "It has the git hub workflow test series",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main/index",
+    "test": "jest test/*"
+  },
+  "keywords": [
+    "test",
+    "git",
+    "workflwo"
+  ],
+  "author": "Satyam Dodmani",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
