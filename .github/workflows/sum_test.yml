@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+      - testBranch
   merge_group:
     branches:
       - main
@@ -14,7 +15,6 @@ on:
 jobs:
   sumTest:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
   echoIfPassed:
     needs: sumTest
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'
     steps:
       - name: Echo the Pass results and env
         run: echo "The Test cases have passed and this is the env!! ${{env.DBURL}}" 
