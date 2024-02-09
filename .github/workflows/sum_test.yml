@@ -12,6 +12,9 @@ on:
     branches:
       - main
 
+env:
+    env_var: ${{vars.env_uat}}
+
 jobs:
   sumTest:
     runs-on: ubuntu-latest
@@ -36,6 +39,6 @@ jobs:
     # if: github.event_name == 'pull_request' && github.event.action != 'closed'
     steps:
       - name: Echo the Pass results and env
-        run: echo "The Test cases have passed and this is the env!! $GITHUB_ENV" 
+        run: echo "The Test cases have passed and this is the  $DBURL!!" 
       - name: Echo the Pass results and secrets
         run: echo "The Test cases have passed and this is the secrets!! ${{secrets.SOMEAUTHSECRET}}" 
