@@ -33,8 +33,7 @@ jobs:
   echoIfPassed:
     needs: sumTest
     runs-on: ubuntu-latest
-    environment: env_uat
-
+    if: github.event_name == 'pull_request'
     steps:
       - name: Echo the Pass results and env
         run: echo "The Test cases have passed and this is the env!! ${{env.DBURL}}" 
